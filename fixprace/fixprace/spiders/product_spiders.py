@@ -8,14 +8,8 @@ class ProductsSpider(scrapy.Spider):
     name = 'product'
 
     def start_requests(self):
-        ROOT_URL = 'https://fix-price.com/catalog/'
-        input_list_categories = [
-            getattr(self, 'category-1', None),
-            getattr(self, 'category-2', None),
-            getattr(self, 'category-3', None),
-        ]
-        urls = [ROOT_URL + url for url in input_list_categories if url]
-
+        with open("urls.txt", "r") as f:
+                    urls = f.read().splitlines()
         cookies = {
             'i18n_redirected': 'ru',
             '_cfuvid': '5cxrtC7Yd8F_hhGEwkrSyPseVdzgHQeJ36Rxpo5XR6I-1708441191369-0.0-604800000',
