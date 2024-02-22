@@ -54,7 +54,7 @@
 ```
 
 ```
-  cd fixprace-parserk
+  cd fixprace-parser
 ```
 ## Поставить зависимости
 
@@ -68,6 +68,11 @@
 `pip install scrapy`
 
 ## Запуск
+
+```
+  cd fixprace
+```
+
 Файл `urls.txt` содержит список ссылок для обхода
 ```
     scrapy crawl product -O datalist.json
